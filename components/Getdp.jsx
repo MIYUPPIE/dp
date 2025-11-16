@@ -33,14 +33,14 @@ export default function Getdp() {
     (ctx) => {
       if (!sanitizedName) return;
       ctx.save();
-      ctx.font = 'bold 40px "Montserrat", sans-serif';
-	  ctx.fillStyle = '#633367';
+      ctx.font = '30px "Montserrat", sans-serif';
+	  ctx.fillStyle = '#ffffffff';
       ctx.textAlign = 'center';
       ctx.shadowColor = 'rgba(255, 204, 93, 1)';
       ctx.shadowBlur = 0;
       ctx.shadowOffsetX = 1;
       ctx.shadowOffsetY = 1;
-      ctx.fillText(sanitizedName, ctx.canvas.width * 0.7, ctx.canvas.height * 0.77);
+      ctx.fillText(sanitizedName, ctx.canvas.width * 0.7, ctx.canvas.height * 0.82);
       ctx.restore();
     },
     [sanitizedName]
