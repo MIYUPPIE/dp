@@ -1,12 +1,36 @@
-# React + Vite
+# dp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Spiritlife 10th Anniversary display-picture generator built with **Next.js 16** and **Tailwind CSS**. Upload a photo, position your name, preview the commemorative artwork, then download a ready-to-share image.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Next.js 16 (App Router, React 19)
+- Tailwind CSS 3.4 with custom palette
+- lucide-react, react-dropzone, canvas compositing
+- Vercel Analytics
 
-## Expanding the ESLint configuration
+## Local development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Visit http://localhost:3000 and start creating DPs.
+
+## Production build
+
+```bash
+npm run build
+npm start
+```
+
+## Deploying to Vercel
+
+```bash
+npm install -g vercel
+vercel login
+vercel --prod
+```
+
+The default project settings auto-detect the Next.js app and build using `npm run build`.

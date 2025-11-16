@@ -1,20 +1,28 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}"
-  ],
-  theme: {
-    extend: {
-      fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
-        poppins: ["Poppins", "sans-serif"],
-      },
-      colors: {
-        primary: "#1F112D",
-        secondary: "#2A1A3A"
-      }
-    },
-  },
-  plugins: [],
-}
-
+module.exports = {
+	content: [
+		'./app/**/*.{js,jsx,ts,tsx}',
+		'./components/**/*.{js,jsx,ts,tsx}',
+		'./pages/**/*.{js,jsx,ts,tsx}',
+		'./src/**/*.{js,jsx,ts,tsx}'
+	],
+	theme: {
+		extend: {
+			colors: {
+				background: '#0b0310',
+				secondary: '#1a0620',
+				primary: '#633367',
+				accent: '#be2030',
+				accentAlt: '#f05d2a',
+				highlight: '#f4d9ec'
+			},
+			fontFamily: {
+				montserrat: ['Montserrat', 'sans-serif']
+			},
+			boxShadow: {
+				glow: '0 0 35px rgba(190, 32, 48, 0.25)'
+			}
+		}
+	},
+	plugins: []
+};

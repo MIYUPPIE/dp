@@ -1,40 +1,39 @@
 {
-  "name": "vite-project",
+  "name": "getdp",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.1.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .js,.jsx"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
     "lucide-react": "^0.509.0",
+    "next": "canary",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-dropzone": "^14.3.8"
   },
   "devDependencies": {
-    "@eslint/js": "^9.25.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react": "^4.4.1",
-    "auto-prefixer": "^0.4.2",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^9.25.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "postcss": "^8.5.3",
-    "tailwind": "^2.3.1",
-    "tailwindcss": "^3.4.17",
-    "vite": "^6.3.5"
+    "@eslint/js": "^9.15.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.15.0",
+    "eslint-config-next": "canary",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "globals": "^15.12.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.17"
   },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "main": "eslint.config.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "description": "Next.js 16 Tailwind app for generating Spiritlife 10th Anniversary display pictures.",
+  "keywords": [
+    "nextjs",
+    "tailwind",
+    "vercel",
+    "dp-generator",
+    "spiritlife"
+  ],
+  "license": "MIT"
 }
