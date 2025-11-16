@@ -169,7 +169,16 @@ export default function Getdp() {
         </nav>
       </header>
 
-      <section className="space-y-10 rounded-3xl border border-white/10 bg-secondary/70 p-6 shadow-2xl shadow-glow backdrop-blur">
+      <section className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-glow">
+        <Image
+          src="/cover1.jpeg"
+          alt="Spiritlife anniversary worship"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 960px"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+        />
+        <div className="relative space-y-10 bg-secondary/70 p-6 backdrop-blur-sm">
         <header className="text-center">
           <p className="text-sm uppercase tracking-[0.3em] text-accent">Spiritlife 10th Year Anniversary</p>
           <h1 className="mt-4 text-3xl font-bold text-highlight md:text-4xl">
@@ -240,6 +249,7 @@ export default function Getdp() {
               Enter your name and upload a photo to enable the download button.
             </p>
           )}
+        </div>
         </div>
       </section>
 
