@@ -12,9 +12,9 @@ const NAV_LINKS = [
   { label: 'Anniversary', href: 'https://spiritlifecns.com/' }
 ];
 const SOCIAL_LINKS = [
-  { href: 'https://facebook.com/spiritlife', icon: Facebook, label: 'Facebook' },
-  { href: 'https://instagram.com/spiritlife', icon: Instagram, label: 'Instagram' },
-  { href: 'https://spiritlife.example.com/', icon: Globe, label: 'Website' }
+  { href: 'https://facebook.com/Livingthewordbyproofs', icon: Facebook, label: 'Facebook' },
+  { href: 'https://instagram.com/spiritlife_chapel/', icon: Instagram, label: 'Instagram' },
+  { href: 'https://spiritlifecns.com/', icon: Globe, label: 'Website' }
 ];
 
 export default function Getdp() {
