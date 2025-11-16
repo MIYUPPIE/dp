@@ -8,8 +8,8 @@ import ImageUpload from '@/components/ImageUpload';
 
 const FLIER_ASSET = '/assets/bg.jpg';
 const NAV_LINKS = [
-  { label: 'Spiritlife Home', href: 'https://spiritlife.com/' },
-  { label: 'Anniversary', href: 'https://spiritlife.com/' }
+  { label: 'Spiritlife Home', href: 'https://spiritlifecns.com/' },
+  { label: 'Anniversary', href: 'https://spiritlifecns.com/' }
 ];
 const SOCIAL_LINKS = [
   { href: 'https://facebook.com/spiritlife', icon: Facebook, label: 'Facebook' },
@@ -36,7 +36,7 @@ export default function Getdp() {
       ctx.font = '30px "Montserrat", sans-serif';
 	  ctx.fillStyle = '#ffffffff';
       ctx.textAlign = 'center';
-      ctx.shadowColor = 'rgba(255, 204, 93, 1)';
+      ctx.shadowColor = 'rgba(255, 255, 255, 1)';
       ctx.shadowBlur = 0;
       ctx.shadowOffsetX = 1;
       ctx.shadowOffsetY = 1;
@@ -156,7 +156,7 @@ export default function Getdp() {
               </li>
             ))}
           </ul>
-          <Link href="https://spiritlife.example.com/" className="flex items-center justify-center" target="_blank" rel="noreferrer">
+          <Link href="https://spiritlifecns.com/" className="flex items-center justify-center" target="_blank" rel="noreferrer">
             <Image
               src="/logo.png"
               alt="Spiritlife 10th Anniversary logo"
