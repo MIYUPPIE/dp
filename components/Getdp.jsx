@@ -222,6 +222,25 @@ export default function Getdp() {
                 <ImageUpload key={uploadResetCounter} onImageUploaded={setUserImage} />
               </div>
 
+
+              <button
+                type="submit"
+                className="rounded-xl bg-accent py-3 font-semibold text-white transition hover:bg-accentAlt focus:outline-none focus:ring-4 focus:ring-accent/40"
+              >
+                Refresh Preview
+              </button>
+            </form>
+          </div>
+
+          <div className="flex flex-col items-center justify-center rounded-2xl bg-secondary/80 p-6">
+            <img
+              src={editedFlierUrl || FLIER_ASSET}
+              alt="Spiritlife DP preview"
+              className="w-full max-h-[500px] rounded-2xl object-contain shadow-glow"
+            />
+          </div>
+        </div>
+
               <div className="grid gap-4 rounded-2xl border border-white/10 bg-secondary/40 p-4 text-sm font-semibold text-accent">
                 <span>Position & Scale</span>
                 <label className="flex flex-col gap-2">
@@ -277,25 +296,6 @@ export default function Getdp() {
                   Reset Adjustments
                 </button>
               </div>
-
-              <button
-                type="submit"
-                className="rounded-xl bg-accent py-3 font-semibold text-white transition hover:bg-accentAlt focus:outline-none focus:ring-4 focus:ring-accent/40"
-              >
-                Refresh Preview
-              </button>
-            </form>
-          </div>
-
-          <div className="flex flex-col items-center justify-center rounded-2xl bg-secondary/80 p-6">
-            <img
-              src={editedFlierUrl || FLIER_ASSET}
-              alt="Spiritlife DP preview"
-              className="w-full max-h-[500px] rounded-2xl object-contain shadow-glow"
-            />
-          </div>
-        </div>
-
         <div className="text-center">
           <button
             type="button"
