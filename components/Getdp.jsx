@@ -23,6 +23,11 @@ export default function Getdp() {
   const [editedFlierUrl, setEditedFlierUrl] = useState(null);
   const [isFlierReady, setIsFlierReady] = useState(false);
   const [uploadResetCounter, setUploadResetCounter] = useState(0);
+  const [imageTransform, setImageTransform] = useState({
+    scale: 100,
+    offsetX: 0,
+    offsetY: 0
+  });
 
   const canvasRef = useRef(null);
   const flierImageRef = useRef(null);
@@ -85,12 +90,12 @@ export default function Getdp() {
   clipPolygon();
   ctx.clip();
 // image positioning
-        const targetSize = radius * 2;
-        const scale = Math.max(targetSize / img.width, targetSize / img.height);
+  const targetSize = radius * 2 * (imageTransform.scale / 100);
+  const scale = Math.max(targetSize / img.width, targetSize / img.height);
         const drawWidth = img.width * scale;
         const drawHeight = img.height * scale;
-        const drawX = userImgX - drawWidth / 2;
-        const drawY = userImgY - drawHeight / 2.2;
+  const drawX = userImgX - drawWidth / 2 + imageTransform.offsetX;
+  const drawY = userImgY - drawHeight / 2.2 + imageTransform.offsetY;
 
         ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
 
@@ -107,7 +112,7 @@ export default function Getdp() {
 
     drawName(ctx);
     setEditedFlierUrl(canvas.toDataURL('image/png'));
-  }, [drawName, userImage]);
+  }, [drawName, imageTransform.offsetX, imageTransform.offsetY, imageTransform.scale, userImage]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -215,6 +220,62 @@ export default function Getdp() {
               <div className="flex flex-col gap-3 text-sm font-semibold text-accent">
                 <span>Upload Image</span>
                 <ImageUpload key={uploadResetCounter} onImageUploaded={setUserImage} />
+              </div>
+
+              <div className="grid gap-4 rounded-2xl border border-white/10 bg-secondary/40 p-4 text-sm font-semibold text-accent">
+                <span>Position & Scale</span>
+                <label className="flex flex-col gap-2">
+                  <span>Scale ({imageTransform.scale}%)</span>
+                  <input
+                    type="range"
+                    min="60"
+                    max="160"
+                    value={imageTransform.scale}
+                    onChange={(event) =>
+                      setImageTransform((prev) => ({ ...prev, scale: Number(event.target.value) }))
+                    }
+                    className="accent-accent"
+                  />
+                </label>
+                <label className="flex flex-col gap-2">
+                  <span>Horizontal Offset ({imageTransform.offsetX}px)</span>
+                  <input
+                    type="range"
+                    min="-150"
+                    max="150"
+                    value={imageTransform.offsetX}
+                    onChange={(event) =>
+                      setImageTransform((prev) => ({ ...prev, offsetX: Number(event.target.value) }))
+                    }
+                    className="accent-accent"
+                  />
+                </label>
+                <label className="flex flex-col gap-2">
+                  <span>Vertical Offset ({imageTransform.offsetY}px)</span>
+                  <input
+                    type="range"
+                    min="-150"
+                    max="150"
+                    value={imageTransform.offsetY}
+                    onChange={(event) =>
+                      setImageTransform((prev) => ({ ...prev, offsetY: Number(event.target.value) }))
+                    }
+                    className="accent-accent"
+                  />
+                </label>
+                <button
+                  type="button"
+                  className="rounded-xl border border-white/10 px-4 py-2 text-xs font-semibold text-highlight transition hover:border-accent hover:text-white"
+                  onClick={() =>
+                    setImageTransform({
+                      scale: 100,
+                      offsetX: 0,
+                      offsetY: 0
+                    })
+                  }
+                >
+                  Reset Adjustments
+                </button>
               </div>
 
               <button
